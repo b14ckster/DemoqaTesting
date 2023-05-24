@@ -1,3 +1,5 @@
+package baseForTests;
+
 import pageObjects.MainPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.assertj.core.api.SoftAssertions;
@@ -8,13 +10,12 @@ import org.testng.annotations.BeforeClass;
 import pageObjects.elements.ElementsPage;
 import pageObjects.elements.TextBoxPage;
 
-public class BaseClassTest {
+public class BaseClassTest extends DataForTests {
     protected WebDriver driver;
     protected SoftAssertions softAssertions;
-    MainPage mainPage;
-    ElementsPage elementsPage;
-    TextBoxPage textBoxPage;
-    protected final String URL = "https://demoqa.com/";
+    protected MainPage mainPage;
+    protected ElementsPage elementsPage;
+    protected TextBoxPage textBoxPage;
 
     @BeforeClass
     public void setUp() {
