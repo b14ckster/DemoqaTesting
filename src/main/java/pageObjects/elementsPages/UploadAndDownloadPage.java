@@ -1,4 +1,4 @@
-package pageObjects.elements;
+package pageObjects.elementsPages;
 
 public class UploadAndDownloadPage {
 }

@@ -1,7 +1,7 @@
 package pageObjects;
 
-import elementObjects.mainPage.HomeBanner;
-import elementObjects.mainPage.HomeBody;
+import elementPageObjects.mainPageElements.HomeBanner;
+import elementPageObjects.mainPageElements.HomeBody;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage extends BasePage {

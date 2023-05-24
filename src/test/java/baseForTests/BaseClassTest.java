@@ -7,8 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
-import pageObjects.elements.ElementsPage;
-import pageObjects.elements.TextBoxPage;
+import pageObjects.elementsPages.ElementsPage;
+import pageObjects.elementsPages.TextBoxPage;
 
 public class BaseClassTest extends DataForTests {
     protected WebDriver driver;

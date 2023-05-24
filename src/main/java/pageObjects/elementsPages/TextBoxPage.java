@@ -1,7 +1,8 @@
-package pageObjects.elements;
+package pageObjects.elementsPages;
 
-import elementObjects.LeftPannel;
-import elementObjects.MainHeader;
+import elementPageObjects.LeftPannel;
+import elementPageObjects.MainHeader;
+import elementPageObjects.elementsPageElements.OutputColumn;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -19,8 +20,11 @@ public class TextBoxPage extends BasePage {
     private WebElement permanentAddressField;
     @FindBy(id = "submit")
     private WebElement submitButton;
+    @FindBy(className = "border col-md-12 col-sm-12")
+    private WebElement resultColumn;
     private final MainHeader mainHeader = new MainHeader(driver);
     private final LeftPannel leftPannel = new LeftPannel(driver);
+    private final OutputColumn outputColumn = new OutputColumn(driver);
 
     public TextBoxPage(WebDriver webDriver) {
         super(webDriver);
@@ -56,5 +60,9 @@ public class TextBoxPage extends BasePage {
 
     public void clickSubmitButton() {
         submitButton.click();
+    }
+
+    public void isDisplayedOutputColumn() {
+
     }
 }

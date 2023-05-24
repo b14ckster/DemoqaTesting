@@ -1,14 +1,11 @@
 package elementsTests;
 
-import baseForTests.BaseClassTest;
 import org.testng.annotations.Test;
 
-public class SomeTest extends BaseClassTest {
+public class TextBoxPageTests extends BaseClassElementsTest {
 
     @Test
-    public void firstTest() {
-        mainPage.openMainPage(URL)
-                .getHomeBody().clickElementsCard();
+    public void enterValuesTest() {
         elementsPage.getLeftPannel().clickTextBoxLink();
         textBoxPage.enterUserName(FULL_NAME)
                    .enterEmail(EMAIL)
@@ -16,4 +13,5 @@ public class SomeTest extends BaseClassTest {
                    .enterPermanentAddress(PERMANENT_ADDRESS)
                    .clickSubmitButton();
     }
+
 }

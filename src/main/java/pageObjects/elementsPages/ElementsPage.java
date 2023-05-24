@@ -1,7 +1,7 @@
-package pageObjects.elements;
+package pageObjects.elementsPages;
 
-import elementObjects.LeftPannel;
-import elementObjects.MainHeader;
+import elementPageObjects.LeftPannel;
+import elementPageObjects.MainHeader;
 import org.openqa.selenium.WebDriver;
 import pageObjects.BasePage;
 
