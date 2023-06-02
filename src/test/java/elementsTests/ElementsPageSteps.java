@@ -1,9 +1,9 @@
 package elementsTests;
 
-import baseForTests.BaseClassTest;
+import baseForTests.BaseAbstractSteps;
 import org.testng.annotations.BeforeMethod;
 
-public class BaseClassElementsTest extends BaseClassTest {
+public class ElementsPageSteps extends BaseAbstractSteps {
 
     @BeforeMethod
     public void openElementsPage() {

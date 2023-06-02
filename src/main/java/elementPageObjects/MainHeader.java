@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-public class MainHeader extends BaseComponent {
+public class MainHeader extends BaseElement {
 
     @FindBy(className = "main-header")
     private WebElement subTitle;

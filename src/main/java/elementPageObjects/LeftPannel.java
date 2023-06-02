@@ -5,7 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @FindBy(className = "left-pannel")
-public class LeftPannel extends BaseComponent {
+public class LeftPannel extends BaseElement {
 
     @FindBy(id = "item-0")
     private WebElement textBoxLink;

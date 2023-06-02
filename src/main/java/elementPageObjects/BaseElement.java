@@ -3,10 +3,10 @@ package elementPageObjects;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 
-public abstract class BaseComponent {
+public abstract class BaseElement {
     protected WebDriver driver;
 
-    public BaseComponent(WebDriver webDriver) {
+    public BaseElement(WebDriver webDriver) {
         driver = webDriver;
         PageFactory.initElements(driver, this);
     }

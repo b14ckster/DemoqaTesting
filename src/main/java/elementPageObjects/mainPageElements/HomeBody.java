@@ -1,12 +1,12 @@
 package elementPageObjects.mainPageElements;
 
-import elementPageObjects.BaseComponent;
+import elementPageObjects.BaseElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 @FindBy(className = "home-body")
-public class HomeBody extends BaseComponent {
+public class HomeBody extends BaseElement {
 
     @FindBy(xpath = "//*/*[contains(@class, 'card mt-4 top-card')][1]")
     private WebElement elementsCard;

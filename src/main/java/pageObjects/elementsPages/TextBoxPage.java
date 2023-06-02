@@ -20,8 +20,6 @@ public class TextBoxPage extends BasePage {
     private WebElement permanentAddressField;
     @FindBy(id = "submit")
     private WebElement submitButton;
-    @FindBy(className = "border col-md-12 col-sm-12")
-    private WebElement resultColumn;
     private final MainHeader mainHeader = new MainHeader(driver);
     private final LeftPannel leftPannel = new LeftPannel(driver);
     private final OutputColumn outputColumn = new OutputColumn(driver);
@@ -62,7 +60,7 @@ public class TextBoxPage extends BasePage {
         submitButton.click();
     }
 
-    public void isDisplayedOutputColumn() {
-
+    public boolean isDisplayedOutputColumn() {
+        return outputColumn.getResultColumn().isDisplayed();
     }
 }

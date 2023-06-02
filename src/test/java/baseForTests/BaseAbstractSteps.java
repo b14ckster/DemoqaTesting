@@ -10,7 +10,7 @@ import org.testng.annotations.BeforeClass;
 import pageObjects.elementsPages.ElementsPage;
 import pageObjects.elementsPages.TextBoxPage;
 
-public class BaseClassTest extends DataForTests {
+public abstract class BaseAbstractSteps extends DataForTests {
     protected WebDriver driver;
     protected SoftAssertions softAssertions;
     protected MainPage mainPage;
