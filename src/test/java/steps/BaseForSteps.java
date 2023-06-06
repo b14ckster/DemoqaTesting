@@ -20,5 +20,4 @@ public abstract class BaseForSteps {
         elementsPage = new ElementsPage(driver);
         textBoxPage = new TextBoxPage(driver);
     }
-
 }

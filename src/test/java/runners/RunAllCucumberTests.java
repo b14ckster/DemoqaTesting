@@ -6,5 +6,4 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(features = {"src/test/resources/featuresFiles"})
 public class RunAllCucumberTests extends AbstractTestNGCucumberTests {
 
-
 }

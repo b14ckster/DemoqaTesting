@@ -14,4 +14,8 @@ public class HomeBanner extends BaseElement {
     public HomeBanner(WebDriver webDriver) {
         super(webDriver);
     }
+
+    public WebElement getSeleniumTrainingRef() {
+        return seleniumTrainingRef;
+    }
 }

@@ -8,6 +8,12 @@ import org.openqa.selenium.support.FindBy;
 @FindBy(className = "home-body")
 public class HomeBody extends BaseElement {
 
+    public static final String ELEMENTS = "Elements";
+    public static final String FORMS = "Forms";
+    public static final String ALERTS_FRAME_WINDOWS = "Alerts, Frame & Windows";
+    public static final String WIDGETS = "Widgets";
+    public static final String INTERACTIONS = "Interactions";
+
     @FindBy(xpath = "//*/*[contains(@class, 'card mt-4 top-card')][1]")
     private WebElement elementsCard;
     @FindBy(xpath = "//*/*[contains(@class, 'card mt-4 top-card')][2]")
@@ -25,27 +31,13 @@ public class HomeBody extends BaseElement {
         super(webDriver);
     }
 
-    public void clickElementsCard() {
-        elementsCard.click();
-    }
-
-    public void clickFormsCard() {
-        formsCard.click();
-    }
-
-    public void clickAlertsFrameWindowsCard() {
-        alertsFrameWindowsCard.click();
-    }
-
-    public void clickWidgetsCard() {
-        widgetsCard.click();
-    }
-
-    public void clickInteractionsCard() {
-        interactionsCard.click();
-    }
-
-    public void clickBookStoreApplicationCard() {
-        bookStoreApplicationCard.click();
+    public void clickOnCard(String card) {
+        switch (card) {
+            case ELEMENTS -> elementsCard.click();
+            case FORMS -> formsCard.click();
+            case ALERTS_FRAME_WINDOWS -> alertsFrameWindowsCard.click();
+            case WIDGETS -> widgetsCard.click();
+            case INTERACTIONS -> interactionsCard.click();
+        }
     }
 }
