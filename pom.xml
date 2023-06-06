@@ -18,6 +18,8 @@
     <assertj-core.version>3.24.2</assertj-core.version>
     <commons-configuration2.version>2.9.0</commons-configuration2.version>
     <cucumber-testng.version>7.12.0</cucumber-testng.version>
+    <cucumber-java.version>7.12.1</cucumber-java.version>
+    <lombok.version>1.18.28</lombok.version>
   </properties>
 
   <dependencies>
@@ -44,9 +46,21 @@
     </dependency>
     <dependency>
       <groupId>io.cucumber</groupId>
+      <artifactId>cucumber-java</artifactId>
+      <version>${cucumber-java.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>io.cucumber</groupId>
       <artifactId>cucumber-testng</artifactId>
       <version>${cucumber-testng.version}</version>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>${lombok.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
   </dependencies>
 
 </project>
