@@ -1,17 +1,20 @@
 package pageObjects.elementsPages;
 
-import pageElementsObjects.LeftPannel;
-import pageElementsObjects.SubTitle;
+import pageElementObjects.LeftPannel;
+import pageElementObjects.SubTitle;
 import org.openqa.selenium.WebDriver;
 import pageObjects.BasePage;
 
 public class ElementsPage extends BasePage {
 
-    private final SubTitle subTitle = new SubTitle(driver);
-    private final LeftPannel leftPannel = new LeftPannel(driver);
+    private final SubTitle subTitle;
+    private final LeftPannel leftPannel;
 
-    public ElementsPage(WebDriver webDriver) {
-        super(webDriver);
+    public ElementsPage(WebDriver driver) {
+        super(driver);
+
+        subTitle = new SubTitle(this.driver);
+        leftPannel = new LeftPannel(this.driver);
     }
 
     public LeftPannel getLeftPannel() {

@@ -18,7 +18,7 @@ public class MainPageSteps extends BaseForSteps {
         Assertions.assertThat(mainPage.getHomeBanner().getSeleniumTrainingRef().isDisplayed()).isTrue();
         Assertions.assertThat(mainPage.getHomeBody().getAmountOfCards()).isEqualTo(expectedSize);
         mainPage.getHomeBody().getCards().forEach(
-            element -> Assertions.assertThat(element.isDisplayed()).isTrue()
+            card -> Assertions.assertThat(card.isDisplayed()).isTrue()
         );
     }
 

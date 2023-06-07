@@ -11,11 +11,12 @@ public abstract class BasePage {
     private WebElement bottom_line;
     @FindBy(xpath = "//*/a[contains(@href, 'https://demoqa.com')]")
     private WebElement title;
+
     protected WebDriver driver;
 
-    public BasePage(WebDriver webDriver) {
-        driver = webDriver;
-        PageFactory.initElements(driver, this);
+    public BasePage(WebDriver driver) {
+        this.driver = driver;
+        PageFactory.initElements(this.driver, this);
     }
 
     public WebElement getBottomLine() {

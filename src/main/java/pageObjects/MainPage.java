@@ -1,23 +1,23 @@
 package pageObjects;
 
-import pageElementsObjects.mainPageElements.HomeBanner;
-import pageElementsObjects.mainPageElements.HomeBody;
+import pageElementObjects.mainPageElements.HomeBanner;
+import pageElementObjects.mainPageElements.HomeBody;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage extends BasePage {
 
-    private HomeBanner homeBanner;
-    private HomeBody homeBody;
+    private final HomeBanner homeBanner;
+    private final HomeBody homeBody;
 
-    public MainPage(WebDriver webDriver) {
-        super(webDriver);
+    public MainPage(WebDriver driver) {
+        super(driver);
+
+        homeBanner = new HomeBanner(this.driver);
+        homeBody = new HomeBody(this.driver);
     }
 
-    public MainPage openMainPage(String url) {
+    public void openMainPage(String url) {
         driver.get(url);
-        homeBanner = new HomeBanner(driver);
-        homeBody = new HomeBody(driver);
-        return this;
     }
 
     public HomeBanner getHomeBanner() {

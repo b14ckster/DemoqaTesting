@@ -20,6 +20,7 @@ public class WebDriverHook {
         driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+
         TestContext.getInstance().setTestObject(DRIVER, driver);
     }
 

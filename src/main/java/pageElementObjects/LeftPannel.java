@@ -1,4 +1,4 @@
-package pageElementsObjects;
+package pageElementObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -36,8 +36,8 @@ public class LeftPannel extends BaseElement {
     @FindBy(id = "item-8")
     private WebElement dynamicPropertiesItem;
 
-    public LeftPannel(WebDriver webDriver) {
-        super(webDriver);
+    public LeftPannel(WebDriver driver) {
+        super(driver);
     }
 
     public void clickOnItem(String item) {

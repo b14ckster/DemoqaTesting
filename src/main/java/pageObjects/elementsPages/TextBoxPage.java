@@ -1,13 +1,10 @@
 package pageObjects.elementsPages;
 
 import java.util.List;
-import pageElementsObjects.LeftPannel;
-import pageElementsObjects.SubTitle;
-import pageElementsObjects.elementsPageElements.OutputColumn;
+import pageElementObjects.elementsPageElements.textBoxPageElements.OutputColumn;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import pageObjects.BasePage;
 
 public class TextBoxPage extends ElementsPage {
 
@@ -25,13 +22,15 @@ public class TextBoxPage extends ElementsPage {
     private WebElement permanentAddressField;
     @FindBy(id = "submit")
     private WebElement submitButton;
-    private final OutputColumn outputColumn = new OutputColumn(driver);
+    private final OutputColumn outputColumn;
 
     public TextBoxPage(WebDriver webDriver) {
         super(webDriver);
+
+        outputColumn = new OutputColumn(driver);
     }
 
-    public void clickSubmitButton() {
+    public void clickOnSubmitButton() {
         submitButton.click();
     }
 
@@ -50,7 +49,7 @@ public class TextBoxPage extends ElementsPage {
         });
     }
 
-    public OutputColumn getOutput() {
+    public OutputColumn getOutputColumn() {
         return outputColumn;
     }
 }

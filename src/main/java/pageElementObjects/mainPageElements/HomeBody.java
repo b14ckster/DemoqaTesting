@@ -1,9 +1,7 @@
-package pageElementsObjects.mainPageElements;
+package pageElementObjects.mainPageElements;
 
 import java.util.List;
-import org.openqa.selenium.By;
-import org.openqa.selenium.By.ByXPath;
-import pageElementsObjects.BaseElement;
+import pageElementObjects.BaseElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -16,8 +14,6 @@ public class HomeBody extends BaseElement {
     public static final String ALERTS_FRAME_WINDOWS = "Alerts, Frame & Windows";
     public static final String WIDGETS = "Widgets";
     public static final String INTERACTIONS = "Interactions";
-
-    public static final String CARD_LOCATOR = "card mt-4 top-card";
 
     @FindBy(xpath = "//*/*[contains(@class, 'card mt-4 top-card')]")
     private List<WebElement> cards;
@@ -34,8 +30,8 @@ public class HomeBody extends BaseElement {
     @FindBy(xpath = "//*/*[contains(@class, 'card mt-4 top-card')][6]")
     private WebElement bookStoreApplicationCard;
 
-    public HomeBody(WebDriver webDriver) {
-        super(webDriver);
+    public HomeBody(WebDriver driver) {
+        super(driver);
     }
 
     public void clickOnCard(String card) {

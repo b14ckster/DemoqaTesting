@@ -1,6 +1,6 @@
-package pageElementsObjects.elementsPageElements;
+package pageElementObjects.elementsPageElements.textBoxPageElements;
 
-import pageElementsObjects.BaseElement;
+import pageElementObjects.BaseElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -12,15 +12,15 @@ public class OutputColumn extends BaseElement {
     private WebElement nameField;
     @FindBy(id = "email")
     private WebElement emailField;
-    @FindBy(id = "currentAddress")
+    @FindBy(css = "#currentAddress.mb-1")
     private WebElement currentAddressField;
-    @FindBy(id = "permanentAddress")
+    @FindBy(css = "#permanentAddress.mb-1")
     private WebElement permanentAddressField;
     @FindBy(id = "output")
     private WebElement resultColumn;
 
-    public OutputColumn(WebDriver webDriver) {
-        super(webDriver);
+    public OutputColumn(WebDriver driver) {
+        super(driver);
     }
 
     public WebElement getResultColumn() {
@@ -28,18 +28,18 @@ public class OutputColumn extends BaseElement {
     }
 
     public String getNameTextWithoutFirstPart() {
-        return nameField.getText().replaceFirst("Name:", " ");
+        return nameField.getText().replaceFirst("Name:", "");
     }
 
     public String getEmailTextWithoutFirstPart() {
-        return emailField.getText().replaceFirst("Email:", " ");
+        return emailField.getText().replaceFirst("Email:", "");
     }
 
     public String getCurrentAddressWithoutFirstPart() {
-        return currentAddressField.getText().replaceFirst("Current Address :", " ");
+        return currentAddressField.getText().replaceFirst("Current Address :", "");
     }
 
     public String getPermanentAddressWithoutFirstPart() {
-        return permanentAddressField.getText().replaceFirst("Permananet Address :", " ");
+        return permanentAddressField.getText().replaceFirst("Permananet Address :", "");
     }
 }

@@ -1,4 +1,4 @@
-package pageElementsObjects;
+package pageElementObjects;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -9,8 +9,8 @@ public class SubTitle extends BaseElement {
     @FindBy(className = "main-header")
     private WebElement subTitle;
 
-    public SubTitle(WebDriver webDriver) {
-        super(webDriver);
+    public SubTitle(WebDriver driver) {
+        super(driver);
     }
 
     public String getSubTitleText() {

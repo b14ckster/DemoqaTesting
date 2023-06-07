@@ -1,6 +1,6 @@
-package pageElementsObjects.mainPageElements;
+package pageElementObjects.mainPageElements;
 
-import pageElementsObjects.BaseElement;
+import pageElementObjects.BaseElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,8 +11,8 @@ public class HomeBanner extends BaseElement {
     @FindBy(xpath = "//*/a[contains(@href, 'https://www.toolsqa.com/selenium-training')]")
     private WebElement seleniumTrainingRef;
 
-    public HomeBanner(WebDriver webDriver) {
-        super(webDriver);
+    public HomeBanner(WebDriver driver) {
+        super(driver);
     }
 
     public WebElement getSeleniumTrainingRef() {
