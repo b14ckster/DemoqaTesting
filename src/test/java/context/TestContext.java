@@ -19,8 +19,9 @@ public final class TestContext {
         return instance;
     }
 
-    public void setTestObject(String key, Object object) {
+    public TestContext setTestObject(String key, Object object) {
         context.put(key, object);
+        return this;
     }
 
     public <T> T getTestObject(String key) {

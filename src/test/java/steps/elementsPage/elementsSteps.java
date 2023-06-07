@@ -9,7 +9,7 @@ public class elementsSteps extends BaseForSteps {
 
     @Then("{string} page should be opened")
     public void CheckOpenedPage(String subTitle) {
-        Assertions.assertThat(driver.getTitle()).isEqualTo(subTitle);
+        Assertions.assertThat(elementsPage.getSubTitle().getSubTitleText()).isEqualTo(subTitle);
     }
 
     @When("I click on {string} on left panel")

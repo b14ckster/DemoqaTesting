@@ -1,13 +1,13 @@
 package pageObjects.elementsPages;
 
-import elementPageObjects.LeftPannel;
-import elementPageObjects.MainHeader;
+import pageElementsObjects.LeftPannel;
+import pageElementsObjects.SubTitle;
 import org.openqa.selenium.WebDriver;
 import pageObjects.BasePage;
 
 public class ElementsPage extends BasePage {
 
-    private final MainHeader mainHeader = new MainHeader(driver);
+    private final SubTitle subTitle = new SubTitle(driver);
     private final LeftPannel leftPannel = new LeftPannel(driver);
 
     public ElementsPage(WebDriver webDriver) {
@@ -18,7 +18,7 @@ public class ElementsPage extends BasePage {
         return leftPannel;
     }
 
-    public MainHeader getMainHeader() {
-        return mainHeader;
+    public SubTitle getSubTitle() {
+        return subTitle;
     }
 }

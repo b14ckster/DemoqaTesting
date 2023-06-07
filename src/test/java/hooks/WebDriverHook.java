@@ -1,11 +1,12 @@
 package hooks;
 
 import static context.TestContext.DRIVER;
-import static context.TestContext.getInstance;
 
+import context.TestContext;
 import io.cucumber.java.After;
 import io.cucumber.java.Before;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
@@ -18,14 +19,16 @@ public class WebDriverHook {
         WebDriverManager.chromedriver().setup();
         driver = new ChromeDriver();
         driver.manage().window().maximize();
-        getInstance().setTestObject(DRIVER, driver);
+        driver.manage().timeouts().implicitlyWait(Duration.ofMillis(5000));
+        TestContext.getInstance().setTestObject(DRIVER, driver);
     }
 
     @After
     public void tearDown() {
+        driver = TestContext.getInstance().getTestObject(DRIVER);
         if (driver != null) {
             driver.quit();
         }
-        getInstance().cleanContext();
+        TestContext.getInstance().cleanContext();
     }
 }

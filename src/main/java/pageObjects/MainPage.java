@@ -1,7 +1,7 @@
 package pageObjects;
 
-import elementPageObjects.mainPageElements.HomeBanner;
-import elementPageObjects.mainPageElements.HomeBody;
+import pageElementsObjects.mainPageElements.HomeBanner;
+import pageElementsObjects.mainPageElements.HomeBody;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage extends BasePage {
@@ -13,7 +13,7 @@ public class MainPage extends BasePage {
         super(webDriver);
     }
 
-    public MainPage openMainPage (String url) {
+    public MainPage openMainPage(String url) {
         driver.get(url);
         homeBanner = new HomeBanner(driver);
         homeBody = new HomeBody(driver);

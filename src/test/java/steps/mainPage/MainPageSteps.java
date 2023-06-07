@@ -13,10 +13,13 @@ public class MainPageSteps extends BaseForSteps {
         mainPage.openMainPage(BASE_URL);
     }
 
-    @Then("Main page should be opened and 6 cards must be present")
-    public void checkOpenedMainPage() {
+    @Then("Main page should be opened and {int} cards must be present")
+    public void checkOpenedMainPage(int expectedSize) {
         Assertions.assertThat(mainPage.getHomeBanner().getSeleniumTrainingRef().isDisplayed()).isTrue();
-
+        Assertions.assertThat(mainPage.getHomeBody().getAmountOfCards()).isEqualTo(expectedSize);
+        mainPage.getHomeBody().getCards().forEach(
+            element -> Assertions.assertThat(element.isDisplayed()).isTrue()
+        );
     }
 
     @When("I click on {string} card")

@@ -1,6 +1,6 @@
-package elementPageObjects.mainPageElements;
+package pageElementsObjects.mainPageElements;
 
-import elementPageObjects.BaseElement;
+import pageElementsObjects.BaseElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;

@@ -1,6 +1,9 @@
-package elementPageObjects.mainPageElements;
+package pageElementsObjects.mainPageElements;
 
-import elementPageObjects.BaseElement;
+import java.util.List;
+import org.openqa.selenium.By;
+import org.openqa.selenium.By.ByXPath;
+import pageElementsObjects.BaseElement;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,6 +17,10 @@ public class HomeBody extends BaseElement {
     public static final String WIDGETS = "Widgets";
     public static final String INTERACTIONS = "Interactions";
 
+    public static final String CARD_LOCATOR = "card mt-4 top-card";
+
+    @FindBy(xpath = "//*/*[contains(@class, 'card mt-4 top-card')]")
+    private List<WebElement> cards;
     @FindBy(xpath = "//*/*[contains(@class, 'card mt-4 top-card')][1]")
     private WebElement elementsCard;
     @FindBy(xpath = "//*/*[contains(@class, 'card mt-4 top-card')][2]")
@@ -39,5 +46,13 @@ public class HomeBody extends BaseElement {
             case WIDGETS -> widgetsCard.click();
             case INTERACTIONS -> interactionsCard.click();
         }
+    }
+
+    public int getAmountOfCards() {
+        return cards.size();
+    }
+
+    public List<WebElement> getCards() {
+        return cards;
     }
 }
