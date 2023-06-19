@@ -26,11 +26,11 @@ public class TextBoxPage extends ElementsPage {
 
     public TextBoxPage(WebDriver webDriver) {
         super(webDriver);
-
         outputColumn = new OutputColumn(driver);
     }
 
     public void clickOnSubmitButton() {
+        js.executeScript("arguments[0].scrollIntoView();", submitButton);
         submitButton.click();
     }
 

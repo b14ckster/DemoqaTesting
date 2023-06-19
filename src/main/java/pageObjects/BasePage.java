@@ -1,5 +1,6 @@
 package pageObjects;
 
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -13,9 +14,11 @@ public abstract class BasePage {
     private WebElement title;
 
     protected WebDriver driver;
+    protected JavascriptExecutor js;
 
     public BasePage(WebDriver driver) {
         this.driver = driver;
+        js = (JavascriptExecutor) this.driver;
         PageFactory.initElements(this.driver, this);
     }
 
