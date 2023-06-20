@@ -24,9 +24,9 @@ public class TextBoxPage extends ElementsPage {
     private WebElement submitButton;
     private final OutputColumn outputColumn;
 
-    public TextBoxPage(WebDriver webDriver) {
-        super(webDriver);
-        outputColumn = new OutputColumn(driver);
+    public TextBoxPage(WebDriver driver) {
+        super(driver);
+        outputColumn = new OutputColumn(this.driver);
     }
 
     public void clickOnSubmitButton() {

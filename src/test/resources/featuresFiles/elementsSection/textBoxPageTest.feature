@@ -1,4 +1,4 @@
-Feature: Elements Page testing feature
+Feature: Text Box Page testing feature
 
   Background:
     Given I open Demoqa site
@@ -17,4 +17,3 @@ Feature: Elements Page testing feature
     And I click on Submit button
     Then Output should appear
     And Output should contain entered values
-

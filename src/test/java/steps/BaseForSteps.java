@@ -4,6 +4,7 @@ import context.TestContext;
 import org.assertj.core.api.SoftAssertions;
 import org.openqa.selenium.WebDriver;
 import pageObjects.MainPage;
+import pageObjects.elementsPages.CheckBoxPage;
 import pageObjects.elementsPages.ElementsPage;
 import pageObjects.elementsPages.TextBoxPage;
 
@@ -15,6 +16,7 @@ public abstract class BaseForSteps {
     protected MainPage mainPage;
     protected ElementsPage elementsPage;
     protected TextBoxPage textBoxPage;
+    protected CheckBoxPage checkBoxPage;
 
     public BaseForSteps() {
         driver = TestContext.getInstance().getTestObject(TestContext.DRIVER);
@@ -23,5 +25,6 @@ public abstract class BaseForSteps {
         mainPage = new MainPage(driver);
         elementsPage = new ElementsPage(driver);
         textBoxPage = new TextBoxPage(driver);
+        checkBoxPage = new CheckBoxPage(driver);
     }
 }
