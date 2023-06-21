@@ -1,7 +1,7 @@
 package pageObjects.elementsPages;
 
 import java.util.List;
-import pageElementObjects.elementsPageElements.textBoxPageElements.OutputColumn;
+import pageElementObjects.elementsSection.OutputColumn;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -49,7 +49,19 @@ public class TextBoxPage extends ElementsPage {
         });
     }
 
-    public OutputColumn getOutputColumn() {
-        return outputColumn;
+    public String getNameFromOutputColumn() {
+        return outputColumn.getNameFromOutputColumn();
+    }
+
+    public String getEmailFromOutputColumn() {
+        return outputColumn.getEmailFromOutputColumn();
+    }
+
+    public String getCurrentAddressFromOutputColumn() {
+        return outputColumn.getCurrentAddressFromOutputColumn();
+    }
+
+    public String getPermanentAddressFromOutputColumn() {
+        return outputColumn.getPermanentAddressFromOutputColumn();
     }
 }

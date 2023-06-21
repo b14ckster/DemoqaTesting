@@ -1,7 +1,9 @@
 package pageObjects;
 
-import pageElementObjects.mainPageElements.HomeBanner;
-import pageElementObjects.mainPageElements.HomeBody;
+import java.util.List;
+import org.openqa.selenium.WebElement;
+import pageElementObjects.mainPage.HomeBanner;
+import pageElementObjects.mainPage.HomeBody;
 import org.openqa.selenium.WebDriver;
 
 public class MainPage extends BasePage {
@@ -20,11 +22,19 @@ public class MainPage extends BasePage {
         driver.get(url);
     }
 
-    public HomeBanner getHomeBanner() {
-        return homeBanner;
+    public boolean isDisplayedTrainingRef() {
+        return homeBanner.isDisplayedTrainingRef();
     }
 
-    public HomeBody getHomeBody() {
-        return homeBody;
+    public int getAmountOfCards() {
+        return homeBody.getAmountOfCards();
+    }
+
+    public void clickOnCard(String card) {
+        homeBody.clickOnCard(card);
+    }
+
+    public List<WebElement> getCards() {
+        return homeBody.getCards();
     }
 }

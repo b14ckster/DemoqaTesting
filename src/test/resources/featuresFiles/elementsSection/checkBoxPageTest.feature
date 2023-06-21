@@ -5,10 +5,10 @@ Feature: Check Box Page testing feature
     Then Main page should be opened and 6 cards must be present
     When I click on "Elements" card
     Then "Elements" page should be opened
-
-  Scenario: Check Box. Click on check boxes.
     When I click on "Check Box" on left panel
     Then "Check Box" page should be opened
+
+  Scenario: Check Box. Click on check boxes.
     When I click on "Expand all" button on Check Box Page
     And I select following check boxes:
       | Notes     |

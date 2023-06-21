@@ -1,4 +1,4 @@
-package pageElementObjects.mainPageElements;
+package pageElementObjects.mainPage;
 
 import java.util.List;
 import pageElementObjects.BaseElement;

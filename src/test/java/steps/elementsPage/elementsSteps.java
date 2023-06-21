@@ -9,11 +9,11 @@ public class elementsSteps extends BaseForSteps {
 
     @Then("{string} page should be opened")
     public void CheckOpenedPage(String subTitle) {
-        Assertions.assertThat(elementsPage.getSubTitle().getSubTitleText()).isEqualTo(subTitle);
+        Assertions.assertThat(elementsPage.getSubTitleText()).isEqualTo(subTitle);
     }
 
     @When("I click on {string} on left panel")
     public void clickOnItemInLeftPanel(String item) {
-        elementsPage.getLeftPannel().clickOnItem(item);
+        elementsPage.clickOnItemOnLeftPanel(item);
     }
 }

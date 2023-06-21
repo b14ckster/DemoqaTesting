@@ -30,13 +30,13 @@ public class textBoxSteps extends BaseForSteps {
     public void CheckOutputValues() {
         List<String> expectedValues = TestContext.getInstance().getTestObject("values");
 
-        softAssertions.assertThat(textBoxPage.getOutputColumn().getNameTextWithoutFirstPart())
+        softAssertions.assertThat(textBoxPage.getNameFromOutputColumn())
                       .isEqualTo(expectedValues.get(0));
-        softAssertions.assertThat(textBoxPage.getOutputColumn().getEmailTextWithoutFirstPart())
+        softAssertions.assertThat(textBoxPage.getEmailFromOutputColumn())
                       .isEqualTo(expectedValues.get(1));
-        softAssertions.assertThat(textBoxPage.getOutputColumn().getCurrentAddressWithoutFirstPart())
+        softAssertions.assertThat(textBoxPage.getCurrentAddressFromOutputColumn())
                       .isEqualTo(expectedValues.get(2));
-        softAssertions.assertThat(textBoxPage.getOutputColumn().getPermanentAddressWithoutFirstPart())
+        softAssertions.assertThat(textBoxPage.getPermanentAddressFromOutputColumn())
                       .isEqualTo(expectedValues.get(3));
 
         softAssertions.assertAll();

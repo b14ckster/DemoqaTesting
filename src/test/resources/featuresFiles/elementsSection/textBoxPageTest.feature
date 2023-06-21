@@ -5,10 +5,10 @@ Feature: Text Box Page testing feature
     Then Main page should be opened and 6 cards must be present
     When I click on "Elements" card
     Then "Elements" page should be opened
-
-  Scenario: Text Box. Enter data in the text fields.
     When I click on "Text Box" on left panel
     Then "Text Box" page should be opened
+
+  Scenario: Text Box. Enter data in the text fields.
     When I enter following values in text fields:
       | Full Name         | Ibrahim Tutovich    |
       | Email             | ZhopkaKota@repa.com |

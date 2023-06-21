@@ -17,11 +17,11 @@ public class ElementsPage extends BasePage {
         leftPannel = new LeftPannel(this.driver);
     }
 
-    public LeftPannel getLeftPannel() {
-        return leftPannel;
+    public void clickOnItemOnLeftPanel(String item) {
+        leftPannel.clickOnItem(item);
     }
 
-    public SubTitle getSubTitle() {
-        return subTitle;
+    public String getSubTitleText() {
+        return subTitle.getSubTitleText();
     }
 }

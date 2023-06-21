@@ -1,4 +1,4 @@
-package pageElementObjects.elementsPageElements.textBoxPageElements;
+package pageElementObjects.elementsSection;
 
 import pageElementObjects.BaseElement;
 import org.openqa.selenium.WebDriver;
@@ -28,19 +28,19 @@ public class OutputColumn extends BaseElement {
         return resultColumn;
     }
 
-    public String getNameTextWithoutFirstPart() {
+    public String getNameFromOutputColumn() {
         return nameField.getText().replaceFirst("Name:", "");
     }
 
-    public String getEmailTextWithoutFirstPart() {
+    public String getEmailFromOutputColumn() {
         return emailField.getText().replaceFirst("Email:", "");
     }
 
-    public String getCurrentAddressWithoutFirstPart() {
+    public String getCurrentAddressFromOutputColumn() {
         return currentAddressField.getText().replaceFirst("Current Address :", "");
     }
 
-    public String getPermanentAddressWithoutFirstPart() {
+    public String getPermanentAddressFromOutputColumn() {
         return permanentAddressField.getText().replaceFirst("Permananet Address :", "");
     }
 }

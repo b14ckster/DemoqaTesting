@@ -15,15 +15,15 @@ public class MainPageSteps extends BaseForSteps {
 
     @Then("Main page should be opened and {int} cards must be present")
     public void checkOpenedMainPage(int expectedSize) {
-        Assertions.assertThat(mainPage.getHomeBanner().isDisplayedTrainingRef()).isTrue();
-        Assertions.assertThat(mainPage.getHomeBody().getAmountOfCards()).isEqualTo(expectedSize);
-        mainPage.getHomeBody().getCards().forEach(
+        Assertions.assertThat(mainPage.isDisplayedTrainingRef()).isTrue();
+        Assertions.assertThat(mainPage.getAmountOfCards()).isEqualTo(expectedSize);
+        mainPage.getCards().forEach(
             card -> Assertions.assertThat(card.isDisplayed()).isTrue()
         );
     }
 
     @When("I click on {string} card")
     public void clickOnCard(String card) {
-        mainPage.getHomeBody().clickOnCard(card);
+        mainPage.clickOnCard(card);
     }
 }

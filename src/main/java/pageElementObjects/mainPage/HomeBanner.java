@@ -1,4 +1,4 @@
-package pageElementObjects.mainPageElements;
+package pageElementObjects.mainPage;
 
 import pageElementObjects.BaseElement;
 import org.openqa.selenium.WebDriver;
@@ -13,10 +13,6 @@ public class HomeBanner extends BaseElement {
 
     public HomeBanner(WebDriver driver) {
         super(driver);
-    }
-
-    public WebElement getSeleniumTrainingRef() {
-        return seleniumTrainingRef;
     }
 
     public boolean isDisplayedTrainingRef() {
