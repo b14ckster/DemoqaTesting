@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd" >
+<suite name="elements-section-all-tests-suit">
+  <test name="elements-section-all-tests-suit">
+    <classes>
+      <class name="runners.ElementsSectionRunners.RunTextBoxPageTest"/>
+      <class name="runners.ElementsSectionRunners.RunCheckBoxPageTest"/>
+      <class name="runners.ElementsSectionRunners.RunRadioButtonPageTest"/>
+    </classes>
+  </test>
+</suite>

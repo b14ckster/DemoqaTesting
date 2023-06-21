@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import pageObjects.MainPage;
 import pageObjects.elementsPages.CheckBoxPage;
 import pageObjects.elementsPages.ElementsPage;
+import pageObjects.elementsPages.RadioButtonPage;
 import pageObjects.elementsPages.TextBoxPage;
 
 public abstract class BaseForSteps {
@@ -17,6 +18,7 @@ public abstract class BaseForSteps {
     protected ElementsPage elementsPage;
     protected TextBoxPage textBoxPage;
     protected CheckBoxPage checkBoxPage;
+    protected RadioButtonPage radioButtonPage;
 
     public BaseForSteps() {
         driver = TestContext.getInstance().getTestObject(TestContext.DRIVER);
@@ -26,5 +28,6 @@ public abstract class BaseForSteps {
         elementsPage = new ElementsPage(driver);
         textBoxPage = new TextBoxPage(driver);
         checkBoxPage = new CheckBoxPage(driver);
+        radioButtonPage = new RadioButtonPage(driver);
     }
 }

@@ -30,7 +30,7 @@ public class TextBoxPage extends ElementsPage {
     }
 
     public void clickOnSubmitButton() {
-        js.executeScript("arguments[0].scrollIntoView();", submitButton);
+        scrollIntoView(submitButton);
         submitButton.click();
     }
 

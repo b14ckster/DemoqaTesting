@@ -18,4 +18,8 @@ public class HomeBanner extends BaseElement {
     public WebElement getSeleniumTrainingRef() {
         return seleniumTrainingRef;
     }
+
+    public boolean isDisplayedTrainingRef() {
+        return seleniumTrainingRef.isDisplayed();
+    }
 }

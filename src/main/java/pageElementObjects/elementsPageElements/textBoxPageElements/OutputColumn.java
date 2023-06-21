@@ -24,6 +24,7 @@ public class OutputColumn extends BaseElement {
     }
 
     public WebElement getResultColumn() {
+        scrollIntoView(resultColumn);
         return resultColumn;
     }
 

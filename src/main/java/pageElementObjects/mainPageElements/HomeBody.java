@@ -34,7 +34,7 @@ public class HomeBody extends BaseElement {
     }
 
     public List<WebElement> getCards() {
-        js.executeScript("arguments[0].scrollIntoView();", getCard("Book Store Application"));
+        scrollIntoView(getCard("Book Store Application"));
         return cards;
     }
 }

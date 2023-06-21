@@ -15,7 +15,7 @@ public class MainPageSteps extends BaseForSteps {
 
     @Then("Main page should be opened and {int} cards must be present")
     public void checkOpenedMainPage(int expectedSize) {
-        Assertions.assertThat(mainPage.getHomeBanner().getSeleniumTrainingRef().isDisplayed()).isTrue();
+        Assertions.assertThat(mainPage.getHomeBanner().isDisplayedTrainingRef()).isTrue();
         Assertions.assertThat(mainPage.getHomeBody().getAmountOfCards()).isEqualTo(expectedSize);
         mainPage.getHomeBody().getCards().forEach(
             card -> Assertions.assertThat(card.isDisplayed()).isTrue()

@@ -24,6 +24,7 @@ public class CheckBoxPage extends ElementsPage {
     }
 
     public boolean isDisplayedResultString() {
+        scrollIntoView(resultString);
         return resultString.isDisplayed();
     }
 
@@ -44,9 +45,8 @@ public class CheckBoxPage extends ElementsPage {
     }
 
     public void clickOnCheckBox(String checkBox) {
-        WebElement checkBoxItem = getCheckBox(checkBox);
-        js.executeScript("arguments[0].scrollIntoView();", checkBoxItem);
-        checkBoxItem.click();
+        scrollIntoView(getCheckBox(checkBox));
+        getCheckBox(checkBox).click();
     }
 
     public boolean isContainItemResultString(String item) {
@@ -54,6 +54,7 @@ public class CheckBoxPage extends ElementsPage {
     }
 
     public boolean checkIsSelectedCheckBox(String checkBox) {
+        scrollIntoView(getCheckBox(checkBox));
         return getCheckBox(checkBox).isSelected();
     }
 }
