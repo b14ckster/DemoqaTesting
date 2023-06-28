@@ -8,6 +8,7 @@ import pageObjects.elementsPages.CheckBoxPage;
 import pageObjects.elementsPages.ElementsPage;
 import pageObjects.elementsPages.RadioButtonPage;
 import pageObjects.elementsPages.TextBoxPage;
+import pageObjects.elementsPages.WebTablesPage;
 
 public abstract class BaseForSteps {
 
@@ -19,6 +20,7 @@ public abstract class BaseForSteps {
     protected TextBoxPage textBoxPage;
     protected CheckBoxPage checkBoxPage;
     protected RadioButtonPage radioButtonPage;
+    protected WebTablesPage webTablesPage;
 
     public BaseForSteps() {
         driver = TestContext.getInstance().getTestObject(TestContext.DRIVER);
@@ -29,5 +31,6 @@ public abstract class BaseForSteps {
         textBoxPage = new TextBoxPage(driver);
         checkBoxPage = new CheckBoxPage(driver);
         radioButtonPage = new RadioButtonPage(driver);
+        webTablesPage = new WebTablesPage(driver);
     }
 }

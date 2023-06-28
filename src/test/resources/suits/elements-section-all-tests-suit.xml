@@ -5,6 +5,7 @@
       <class name="runners.ElementsSectionRunners.RunTextBoxPageTest"/>
       <class name="runners.ElementsSectionRunners.RunCheckBoxPageTest"/>
       <class name="runners.ElementsSectionRunners.RunRadioButtonPageTest"/>
+      <class name="runners.ElementsSectionRunners.RunWebTablesPageTest"/>
     </classes>
   </test>
 </suite>

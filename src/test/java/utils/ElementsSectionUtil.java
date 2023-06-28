@@ -17,4 +17,9 @@ public class ElementsSectionUtil {
                      .map(String::toLowerCase)
                      .collect(Collectors.toList());
     }
+
+    public static List<List<String>> getValuesWithoutFirstLine(List<List<String>> values) {
+        values.remove(0);
+        return values;
+    }
 }
