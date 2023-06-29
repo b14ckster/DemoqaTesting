@@ -1,5 +1,6 @@
 package pageElementObjects.elementsSection;
 
+import java.util.ArrayList;
 import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -10,8 +11,15 @@ import pageElementObjects.BaseElement;
 @FindBy(xpath = "//div[contains(@class, 'ReactTable')]")
 public class WebTable extends BaseElement {
 
-    public static final String PREVIOUS = "Previous";
-    public static final String NEXT = "Next";
+    private static final String PREVIOUS = "Previous";
+    private static final String NEXT = "Next";
+
+    private static final String FIRST_NAME = "First Name";
+    private static final String LAST_NAME = "Last Name";
+    private static final String AGE = "Age";
+    private static final String EMAIL = "Email";
+    private static final String SALARY = "Salary";
+    private static final String DEPARTMENT = "Department";
     @FindBy(className = "-previous")
     private WebElement previousButton;
     @FindBy(className = "-next")
@@ -29,19 +37,21 @@ public class WebTable extends BaseElement {
         super(driver);
     }
 
-    protected WebElement getButton(String button) {
+    private WebElement getButton(String button) {
         switch (button) {
             case PREVIOUS -> {
+                scrollIntoView(previousButton);
                 return previousButton;
             }
             case NEXT -> {
+                scrollIntoView(nextButton);
                 return nextButton;
             }
         }
         return null;
     }
 
-    protected WebElement getColumnName(String columnName) {
+    private WebElement getColumnName(String columnName) {
         for (WebElement column : headerWebTable) {
             if (column.getText().contains(columnName)) {
                 return column;
@@ -71,6 +81,7 @@ public class WebTable extends BaseElement {
     }
 
     public void selectPageSizeOption(int option) {
+        scrollIntoView(selectPageSizeOption);
         selectPageSizeOption.click();
         selectPageSizeOption.findElement(By.xpath("//option[@value='" + option + "']")).click();
     }
@@ -81,5 +92,106 @@ public class WebTable extends BaseElement {
 
     public void clickOnEditButtonInRow(int index) {
         getRowByIndex(index).findElement(By.cssSelector("[title='Edit']")).click();
+    }
+
+    public List<String> getValuesFromRowByIndex(int index) {
+        List<WebElement> list = getRowByIndex(index).findElements(By.className("rt-td"));
+        list.remove(list.size() - 1);
+        List<String> list2 = new ArrayList<>();
+        for (WebElement item : list) {
+            list2.add(item.getText());
+        }
+        return list2;
+    }
+
+    protected int getNumberOfColumnByName(String columnName) {
+        switch (columnName) {
+            case FIRST_NAME -> {
+                return 0;
+            }
+            case LAST_NAME -> {
+                return 1;
+            }
+            case AGE -> {
+                return 2;
+            }
+            case EMAIL -> {
+                return 3;
+            }
+            case SALARY -> {
+                return 4;
+            }
+            case DEPARTMENT -> {
+                return 5;
+            }
+        }
+        return -1;
+    }
+
+    public List<String> getListOfColumnValues(String columnName) {
+        int index = getNumberOfColumnByName(columnName);
+        List<String> resultList = new ArrayList<>();
+        for (int i = 0; i < getNumberOfRowsWithValues(); i++) {
+            resultList.add(rows.get(i).findElements(By.className("rt-td")).get(index).getText());
+        }
+        return resultList;
+    }
+
+    public boolean isColumnOfStringSortedInAscendingOrder(String columnName) {
+        List<String> values = getListOfColumnValues(columnName);
+        for (int i = 1; i < values.size(); i++) {
+            if (values.get(i).compareToIgnoreCase(values.get(i - 1)) < 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isColumnOfStringSortedInDescendingOrder(String columnName) {
+        List<String> values = getListOfColumnValues(columnName);
+        for (int i = 1; i < values.size(); i++) {
+            if (values.get(i).compareToIgnoreCase(values.get(i - 1)) > 0) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isColumnOfIntSortedInAscendingOrder(String columnName) {
+        List<String> valuesString = getListOfColumnValues(columnName);
+        List<Integer> valuesInt = new ArrayList<>();
+        for (String s : valuesString) {
+            valuesInt.add(Integer.parseInt(s));
+        }
+        for (int i = 1; i < valuesInt.size(); i++) {
+            if (valuesInt.get(i) < valuesInt.get(i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isColumnOfIntSortedInDescendingOrder(String columnName) {
+        List<String> valuesString = getListOfColumnValues(columnName);
+        List<Integer> valuesInt = new ArrayList<>();
+        for (String s : valuesString) {
+            valuesInt.add(Integer.parseInt(s));
+        }
+        for (int i = 1; i < valuesInt.size(); i++) {
+            if (valuesInt.get(i) > valuesInt.get(i - 1)) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean isRowContainsSortingValue(String sortingValue, int index) {
+        List<String> row = getValuesFromRowByIndex(index);
+        for (String item : row) {
+            if (item.contains(sortingValue)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

@@ -9,7 +9,7 @@ import pageElementObjects.elementsSection.WebTable;
 
 public class WebTablesPage extends ElementsPage {
 
-    public static final String ADD_BUTTON = "Add";
+    private static final String ADD_BUTTON = "Add";
 
     @FindBy(id = "addNewRecordButton")
     private WebElement addNewRecordButton;
@@ -17,7 +17,6 @@ public class WebTablesPage extends ElementsPage {
     private WebElement searchBox;
 
     private final WebTable webTable;
-
     private final RegistrationForm registrationForm;
 
     public WebTablesPage(WebDriver driver) {
@@ -66,5 +65,33 @@ public class WebTablesPage extends ElementsPage {
     public void editRow(int index, List<String> values) {
         webTable.clickOnEditButtonInRow(index);
         registrationForm.fillRegistrationForm(values);
+    }
+
+    public List<String> getValuesFromRowByIndex(int index) {
+        return webTable.getValuesFromRowByIndex(index);
+    }
+
+    public boolean isRowSorted(String columnName, String type, String order) {
+        switch (type) {
+            case "string" -> {
+                if (order.equalsIgnoreCase("descending")) {
+                    return webTable.isColumnOfStringSortedInDescendingOrder(columnName);
+                } else {
+                    return webTable.isColumnOfStringSortedInAscendingOrder(columnName);
+                }
+            }
+            case "int" -> {
+                if (order.equalsIgnoreCase("descending")) {
+                    return webTable.isColumnOfIntSortedInDescendingOrder(columnName);
+                } else {
+                    return webTable.isColumnOfIntSortedInAscendingOrder(columnName);
+                }
+            }
+        }
+        return false;
+    }
+
+    public boolean isRowContainsSortingValue(String sortingValue, int index) {
+        return webTable.isRowContainsSortingValue(sortingValue, index);
     }
 }

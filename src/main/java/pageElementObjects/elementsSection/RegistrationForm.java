@@ -65,8 +65,8 @@ public class RegistrationForm extends BaseElement {
     public void fillRegistrationForm(List<String> values) {
         enterFirstName(values.get(0));
         enterLastName(values.get(1));
-        enterEmail(values.get(2));
-        enterAge(values.get(3));
+        enterAge(values.get(2));
+        enterEmail(values.get(3));
         enterSalary(values.get(4));
         enterDepartment(values.get(5));
         clickOnSubmitButton();
