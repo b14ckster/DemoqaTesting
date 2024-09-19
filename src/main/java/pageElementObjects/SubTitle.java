@@ -6,7 +6,7 @@ import org.openqa.selenium.support.FindBy;
 
 public class SubTitle extends BaseElement {
 
-    @FindBy(className = "main-header")
+    @FindBy(className = "text-center")
     private WebElement subTitle;
 
     public SubTitle(WebDriver driver) {

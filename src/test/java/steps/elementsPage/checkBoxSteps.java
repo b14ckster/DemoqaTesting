@@ -8,6 +8,8 @@ import org.assertj.core.api.Assertions;
 import steps.BaseForSteps;
 import utils.ElementsSectionUtil;
 
+import static utils.ElementsSectionUtil.makeLowerCase;
+
 public class checkBoxSteps extends BaseForSteps {
 
     @When("I click on {string} button on Check Box Page")
@@ -36,7 +38,7 @@ public class checkBoxSteps extends BaseForSteps {
     @Then("Result string should contain entered values with following values:")
     public void checkResultStringValues(List<String> followingValues) {
         List<String> checkBoxes = TestContext.getInstance().getTestObject("checkBoxes");
-        checkBoxes = ElementsSectionUtil.makeLowerCase(checkBoxes);
+        checkBoxes = makeLowerCase(checkBoxes);
         checkBoxes.addAll(followingValues);
         for (String checkBox : checkBoxes) {
             softAssertions.assertThat(checkBoxPage.isContainItemResultString(checkBox)).isTrue();

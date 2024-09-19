@@ -8,6 +8,8 @@ import org.assertj.core.api.Assertions;
 import steps.BaseForSteps;
 import utils.ElementsSectionUtil;
 
+import static utils.ElementsSectionUtil.getValuesWithoutFirstLine;
+
 public class webTablesSteps extends BaseForSteps {
 
     @Then("{string} button should be enabled")
@@ -43,11 +45,11 @@ public class webTablesSteps extends BaseForSteps {
     }
 
     @When("I add new {int} rows in web table containing:")
-    public void addNewRowsInWebTable(int numberOfRows, List<List<String>> values) {
+    public void addNewRowsInWebTable(int numberOfRows, List<List<String>> table) {
         for (int i = 1; i <= numberOfRows; i++) {
-            webTablesPage.addNewRow(values.get(i));
+            webTablesPage.addNewRow(table.get(i));
         }
-        TestContext.getInstance().setTestObject("values", ElementsSectionUtil.getValuesWithoutFirstLine(values));
+        TestContext.getInstance().setTestObject("table", getValuesWithoutFirstLine(table));
     }
 
     @When("At least {int} rows with values should be in web table")

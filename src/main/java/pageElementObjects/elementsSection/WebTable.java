@@ -20,6 +20,7 @@ public class WebTable extends BaseElement {
     private static final String EMAIL = "Email";
     private static final String SALARY = "Salary";
     private static final String DEPARTMENT = "Department";
+
     @FindBy(className = "-previous")
     private WebElement previousButton;
     @FindBy(className = "-next")
