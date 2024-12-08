@@ -35,10 +35,11 @@ public class ElementsSectionUtil {
      * Remove first line from cucumber-table. Common case: exclude table headers.
      *
      * @param table table from step in cucumber scenario
+     * @param lineIndex index of line (starting from 0)
      * @return table without first line
      */
-    public static List<List<String>> getValuesWithoutFirstLine(List<List<String>> table) {
-        table.remove(0);
+    public static List<List<String>> getValuesFromCucumberTableWithoutLine(List<List<String>> table, int lineIndex) {
+        table.remove(lineIndex);
         return table;
     }
 }

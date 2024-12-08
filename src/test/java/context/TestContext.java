@@ -19,7 +19,7 @@ public final class TestContext {
     public static final String DRIVER = "driver";
 
     /**
-     * Global variable for access
+     * Global variable for access singleton
      */
     private static TestContext instance;
 
@@ -29,8 +29,8 @@ public final class TestContext {
     private Map<String, Object> context = new HashMap<>();
 
     /**
-     * Method for getting uor instance.
-     * Released lazy initialization.
+     * Method for getting your instance.
+     * Implemented lazy initialization.
      */
     public static TestContext getInstance() {
         if (instance == null) {

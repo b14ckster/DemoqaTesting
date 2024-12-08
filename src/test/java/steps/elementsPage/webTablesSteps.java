@@ -6,9 +6,8 @@ import io.cucumber.java.en.When;
 import java.util.List;
 import org.assertj.core.api.Assertions;
 import steps.BaseForSteps;
-import utils.ElementsSectionUtil;
 
-import static utils.ElementsSectionUtil.getValuesWithoutFirstLine;
+import static utils.ElementsSectionUtil.getValuesFromCucumberTableWithoutLine;
 
 public class webTablesSteps extends BaseForSteps {
 
@@ -49,7 +48,7 @@ public class webTablesSteps extends BaseForSteps {
         for (int i = 1; i <= numberOfRows; i++) {
             webTablesPage.addNewRow(table.get(i));
         }
-        TestContext.getInstance().setTestObject("table", getValuesWithoutFirstLine(table));
+        TestContext.getInstance().setTestObject("table", getValuesFromCucumberTableWithoutLine(table, 0));
     }
 
     @When("At least {int} rows with values should be in web table")
