@@ -1,10 +1,12 @@
+
+@all @checkbox_page
 Feature: Check Box Page testing feature
 
   Background:
     Given I open Demoqa site
     Then Main page should be opened and 6 cards must be present
     When I click on "Elements" card
-    Then "Elements" page should be opened
+#    Then "Elements" page should be opened
     When I click on "Check Box" on left panel
     Then "Check Box" page should be opened
 

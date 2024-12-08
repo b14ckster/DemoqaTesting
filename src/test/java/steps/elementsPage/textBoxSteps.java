@@ -6,14 +6,15 @@ import io.cucumber.java.en.When;
 import java.util.List;
 import org.assertj.core.api.Assertions;
 import steps.BaseForSteps;
-import utils.ElementsSectionUtil;
+
+import static utils.ElementsSectionUtil.getValuesFromColumnCucumberTable;
 
 public class textBoxSteps extends BaseForSteps {
 
     @When("I enter following values in text fields:")
-    public void EnterValuesInTextFields(List<List<String>> values) {
-        textBoxPage.enterValuesInTextFields(values);
-        TestContext.getInstance().setTestObject("values", ElementsSectionUtil.getSecondColumnFromValues(values));
+    public void EnterValuesInTextFields(List<List<String>> table) {
+        textBoxPage.enterValuesInTextFields(table);
+        TestContext.getInstance().setTestObject("values", getValuesFromColumnCucumberTable(table, 1));
     }
 
     @When("I click on Submit button")

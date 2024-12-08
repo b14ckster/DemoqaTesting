@@ -10,6 +10,9 @@ import pageObjects.elementsPages.RadioButtonPage;
 import pageObjects.elementsPages.TextBoxPage;
 import pageObjects.elementsPages.WebTablesPage;
 
+/**
+ * Base abstract for all steps-classes
+ */
 public abstract class BaseForSteps {
 
     public static final String BASE_URL = "https://demoqa.com/";

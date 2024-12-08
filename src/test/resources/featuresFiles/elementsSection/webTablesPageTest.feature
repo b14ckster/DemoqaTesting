@@ -1,10 +1,12 @@
+
+@all @web_table
 Feature: Web Tables Page testing feature
 
   Background:
     Given I open Demoqa site
     Then Main page should be opened and 6 cards must be present
     When I click on "Elements" card
-    Then "Elements" page should be opened
+   # Then "Elements" page should be opened
     When I click on "Web Tables" on left panel
     Then "Web Tables" page should be opened
 

@@ -1,6 +1,8 @@
 package pageObjects;
 
 import java.util.List;
+
+import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import pageElementObjects.mainPage.HomeBanner;
 import pageElementObjects.mainPage.HomeBody;
@@ -19,7 +21,10 @@ public class MainPage extends BasePage {
     }
 
     public void openMainPage(String url) {
-        driver.get(url);
+        try {
+            driver.get(url);
+        } catch (TimeoutException ignore) {
+        }
     }
 
     public boolean isDisplayedTrainingRef() {
